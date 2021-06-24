@@ -41,7 +41,7 @@ A sample [data set](./src/homes.json) representing properties has been included 
 - View/detail homes:\
 ![alt text](https://github.com/breezyltv/offer1-interview-project/blob/master/demo/homes-and-detail.gif?raw=true)
 
-- Filter:
+- Filter:\
 ![alt text](https://github.com/breezyltv/offer1-interview-project/blob/master/demo/homes-filter.gif?raw=true)
 
 ## Technologies - Features:
