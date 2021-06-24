@@ -5,6 +5,7 @@ import { HOMES, homes as IHomes } from "../../lib/graphql/queries";
 import { Row, Col, List, Empty } from "antd";
 import { LoadingCard } from "../Common";
 import { ListingCard, FilterHeader } from "./components";
+import { ErrorBanner } from "../../lib/components";
 import { HomeContainer } from "./styles";
 
 const PAGE_LIMIT = 8;
@@ -71,9 +72,13 @@ export const Home = () => {
       <Empty description="No matching results found or user does not have any listings yet!" />
     );
   }
+  const homeError = error ? (
+    <ErrorBanner description="Ohh! Something went wrong. Please try again later!" />
+  ) : null;
 
   return (
     <HomeContainer>
+      {homeError}
       <FilterHeader />
       {listingsContent}
     </HomeContainer>
