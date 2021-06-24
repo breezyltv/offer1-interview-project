@@ -1,5 +1,5 @@
 import { HomeDetail_homeDetail as IHome } from "../../../lib/graphql/queries";
-import { Typography, Space, Divider, Button } from "antd";
+import { Typography, Space } from "antd";
 import { HomeOutlined } from "@ant-design/icons";
 import { FeaturesDiv } from "../styles";
 const { Text, Title } = Typography;

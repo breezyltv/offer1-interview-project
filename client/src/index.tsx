@@ -4,7 +4,7 @@ import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "react-apollo";
-import { GlobalStyle, ContentSpinner, SpinnerStyled } from "./styles";
+import { GlobalStyle } from "./styles";
 import { Header, Home, HomeDetail, Footer, NotFound } from "./sections";
 
 const client = new ApolloClient({
