@@ -34,13 +34,13 @@ A sample [data set](./src/homes.json) representing properties has been included 
 
 ## :gear: Config:
 
-Clone project and in the project directories, you can run this command for each folders (client and server):
+Clone project and in the client and server directories, you can run this command for each folders (client and server):
 
 ### 'yarn install'
 
 - make sure that adds proxy in package.json in client folder.\
   ` "proxy": "http://localhost:5000/"`
-- run command at the root folder:\
+- run command at the root project (it will start both client and server.):\
  `make` or `cd server && yarn run dev`
 - Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 - GraphQL Playground:\
