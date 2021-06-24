@@ -32,6 +32,37 @@ A sample [data set](./src/homes.json) representing properties has been included 
 3. Completed the Google Form [here](https://forms.gle/We7VGi73apbECGKL6) once you are done with the code. Once submitted do not make any further changes to the code!
 
 
+------------------------------------------------ Solution --------------------------------------------------------
+- :white_check_mark: View/browse all available homes 
+- :building_construction: Filter homes by City, Price, Number of Bedrooms: filtering with multiple values is not working yet, but it can filter value separately.
+- :white_check_mark: Show detailed view for a selected home 
+
+## Demo
+- View/detail homes:\
+![alt text](https://github.com/breezyltv/offer1-interview-project/blob/master/demo/homes-and-detail.gif?raw=true)
+
+- Filter:
+![alt text](https://github.com/breezyltv/offer1-interview-project/blob/master/demo/homes-filter.gif?raw=true)
+
+## Technologies - Features:
+
+- Written in Typescript from front end to back end.
+- GraphQL for APIs
+- Responsive design.
+
+### Backend:
+
+- Node.js + Express
+- GraphQL
+- Apollo server express
+
+### Frontend:
+- React.js framework
+- Functional component
+- UI framework: Ant Design
+- Styled Components: help customize antd's components
+- Apollo client
+
 ## :gear: Config:
 
 Clone project and in the client and server directories, you can run this command for each folders (client and server):
@@ -39,9 +70,14 @@ Clone project and in the client and server directories, you can run this command
 ### 'yarn install'
 
 - make sure that adds proxy in package.json in client folder.\
+  
   ` "proxy": "http://localhost:5000/"`
+
 - run command at the root project (it will start both client and server.):\
- `make` or `cd server && yarn run dev`
+  
+  `make` or `cd server && yarn run dev`
+
 - Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+  
 - GraphQL Playground:\
   Open [http://localhost:5000/api](http://localhost:5000/api)

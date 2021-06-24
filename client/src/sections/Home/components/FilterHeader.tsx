@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Typography, Button, Select, Dropdown, Form, Input, Alert } from "antd";
-import { FilterSpace, PriceMenu } from "../styles";
+import { FilterSpace, PriceMenu, FilterForm } from "../styles";
 import { homes_homes as IHomesData } from "../../../lib/graphql/queries";
-const { Text, Title } = Typography;
+const { Title } = Typography;
 const { Option } = Select;
 
 interface Props {
@@ -105,6 +105,7 @@ export const FilterHeader = ({
           const priceFilter = originalHomesData.result.filter((home) => {
             if (data.minPrice && data.maxPrice)
               return home.price >= minPrice && home.price <= maxPrice;
+            return originalHomesData;
           });
 
           console.log(priceFilter);
@@ -292,8 +293,8 @@ export const FilterHeader = ({
   );
 
   return (
-    <Form form={form}>
-      <FilterSpace size={20} align="start">
+    <FilterForm form={form}>
+      <FilterSpace size={20} align="start" wrap>
         <Title level={4}>Filter: </Title>
 
         {cityFilter}
@@ -311,6 +312,6 @@ export const FilterHeader = ({
           <Button onClick={handleReset}>Reset</Button>
         </Form.Item>
       </FilterSpace>
-    </Form>
+    </FilterForm>
   );
 };
