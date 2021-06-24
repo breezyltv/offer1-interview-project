@@ -15,10 +15,13 @@ interface Props {
   loadingListings: boolean;
 }
 export const ListingCard = ({ home, loadingListings }: Props) => {
+  const add2 = home.property?.address.addressLine2
+    ? home.property?.address.addressLine2
+    : "";
   const propAddress =
     home.property?.address.addressLine1 +
     " " +
-    home.property?.address.addressLine2 +
+    add2 +
     ", " +
     home.property?.address.city +
     ", " +

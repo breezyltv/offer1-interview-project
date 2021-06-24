@@ -76,22 +76,23 @@ export const typeDefs = gql`
 
   type THome {
     id: Int!
-    property: TProperty
-    state: String
+    property: TProperty!
+    state: String!
     price: Int!
-    escrowCompany: TEscrowCompany
-    titleCompany: TTitleCompany
-    listingAgent: TListingAgent
-    includedItems: [TIncludedItems]
-    excludedItems: [TExcludedItems]
+    escrowCompany: TEscrowCompany!
+    titleCompany: TTitleCompany!
+    listingAgent: TListingAgent!
+    includedItems: [TIncludedItems!]
+    excludedItems: [TExcludedItems!]
   }
 
-  type IHomes {
+  type THomes {
     total: Int!
     result: [THome!]!
   }
 
   type Query {
-    homes: IHomes!
+    homes: THomes!
+    homeDetail(id: Int!): THome
   }
 `;

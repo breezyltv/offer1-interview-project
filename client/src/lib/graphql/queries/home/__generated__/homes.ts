@@ -30,13 +30,13 @@ export interface homes_homes_result_property {
 export interface homes_homes_result {
   __typename: "THome";
   id: number;
-  property: homes_homes_result_property | null;
-  state: string | null;
+  property: homes_homes_result_property;
+  state: string;
   price: number;
 }
 
 export interface homes_homes {
-  __typename: "IHomes";
+  __typename: "THomes";
   total: number;
   result: homes_homes_result[];
 }
