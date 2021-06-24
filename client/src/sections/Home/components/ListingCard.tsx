@@ -75,6 +75,7 @@ export const ListingCard = ({ home, loadingListings }: Props) => {
             sqft
           </Text>
           <Text>{propAddress}</Text>
+          <Text>State: {home.state}</Text>
         </MetaInfoSpace>
       </Skeleton>
     </ListingCardWrapper>
