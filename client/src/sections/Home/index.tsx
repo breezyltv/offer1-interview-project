@@ -1,7 +1,11 @@
 import { useState } from "react";
 import { useQuery } from "@apollo/react-hooks";
 import { Link } from "react-router-dom";
-import { HOMES, homes as IHomes } from "../../lib/graphql/queries";
+import {
+  HOMES,
+  homes as IHomes,
+  homes_homes as IHomesData,
+} from "../../lib/graphql/queries";
 import { Row, Col, List, Empty } from "antd";
 import { LoadingCard } from "../Common";
 import { ListingCard, FilterHeader } from "./components";
@@ -24,8 +28,13 @@ const generateLoadingListingCard = (): JSX.Element[] => {
 
 export const Home = () => {
   const [homesPage, setHomesPage] = useState(1);
-  const { data, loading, error } = useQuery<IHomes>(HOMES);
-  console.log(data);
+  const [homeData, setHomeData] = useState<IHomesData>();
+  const { data, loading, error } = useQuery<IHomes>(HOMES, {
+    onCompleted: ({ homes }) => {
+      setHomeData(homes);
+    },
+  });
+  //console.log(data);
 
   const listCard = (
     <List
@@ -38,11 +47,11 @@ export const Home = () => {
         xl: 4,
         xxl: 4,
       }}
-      dataSource={data?.homes.result}
+      dataSource={homeData && homeData.result}
       pagination={{
         position: "bottom",
         current: homesPage,
-        total: data?.homes.total,
+        total: homeData && homeData.total,
         defaultPageSize: PAGE_LIMIT,
         hideOnSinglePage: true,
         showLessItems: true,
@@ -79,7 +88,11 @@ export const Home = () => {
   return (
     <HomeContainer>
       {homeError}
-      <FilterHeader />
+      <FilterHeader
+        homeData={homeData}
+        setHomeData={setHomeData}
+        originalHomesData={data && data.homes}
+      />
       {listingsContent}
     </HomeContainer>
   );

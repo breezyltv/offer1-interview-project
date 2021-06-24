@@ -29,6 +29,8 @@ export const MediaDiv = styled.div`
 
 export const ListingCardWrapper = styled(Card)`
   border-radius: 5px;
+  min-width: 330px;
+
   img {
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
