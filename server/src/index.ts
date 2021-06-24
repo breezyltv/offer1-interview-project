@@ -10,9 +10,9 @@ const PORT = process.env.PORT || 5000;
 
 const mount = async (app: Application) => {
   //load mock data json
-  console.log("reading mock data...");
+  console.log("loading mock data...");
   const listings: IHome[] = _homes;
-  console.log("reading mock done!");
+  console.log("loading mock data done!");
 
   app.use(cors({ credentials: true, origin: `${process.env.PUBLIC_URL}` }));
   app.use(express.json());

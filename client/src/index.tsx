@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "react-apollo";
 import { GlobalStyle, ContentSpinner, SpinnerStyled } from "./styles";
-import { Header, Home, Footer } from "./sections";
+import { Header, Home, HomeDetail, Footer, NotFound } from "./sections";
 
 const client = new ApolloClient({
   uri: "/api",
@@ -18,6 +18,8 @@ const App = () => {
       <Header />
       <Switch>
         <Route exact path="/" component={Home} />
+        <Route exact path="/homedetails/:id" component={HomeDetail} />
+        <Route component={NotFound} />
       </Switch>
       <Footer />
     </Router>
